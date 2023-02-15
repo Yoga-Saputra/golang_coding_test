@@ -9,3 +9,5 @@
 # Cache and temporary datas
 tmp/
 bin/
+
+.DS_Store
