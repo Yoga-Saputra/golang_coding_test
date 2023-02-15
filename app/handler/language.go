@@ -186,10 +186,10 @@ func UpdateLanguage(ctx *gin.Context) {
 	inputBytes, _ := json.Marshal(languges)
 	json.Unmarshal([]byte(inputBytes), &payload)
 
-	var id int
+	var id []int
 
 	for key, value := range payload {
-		if key == *param.ID {
+		if key+1 == *param.ID {
 			appeared := helper.GetApeared(input.Appeared)
 			lang := fmt.Sprintf("%v", input.Languages)
 
@@ -214,11 +214,11 @@ func UpdateLanguage(ctx *gin.Context) {
 
 			config.Loggers("info", value)
 
-			id = key
+			id = append(id, *param.ID)
 		}
 	}
 
-	if id == 0 {
+	if id == nil {
 		ctx.JSON(http.StatusNotFound, "no data available")
 		return
 	}
@@ -238,18 +238,18 @@ func DeleteLanguage(ctx *gin.Context) {
 	inputBytes, _ := json.Marshal(languges)
 	json.Unmarshal([]byte(inputBytes), &payload)
 
-	var id int
+	var id []int
 
 	for key, value := range payload {
-		if key == *param.ID {
+		if key+1 == *param.ID {
 			languges = append(languges[:key], languges[key+1:]...)
-			id = key
+			id = append(id, *param.ID)
 
 			config.Loggers("info", value)
 		}
 	}
 
-	if id == 0 {
+	if id == nil {
 		ctx.JSON(http.StatusNotFound, "data not available")
 		return
 	}
