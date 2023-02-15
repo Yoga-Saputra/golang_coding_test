@@ -1,0 +1,11 @@
+# Binaries for programs and plugins
+
+# Test binary, built with `go test -c`
+*.tmp
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Cache and temporary datas
+tmp/
+bin/
