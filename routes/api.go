@@ -19,7 +19,7 @@ func InitApi(state overseer.State) {
 
 	router.GET("/", handler.Hello)
 	router.GET("/language", handler.GetLanguage)
-	router.GET("palindrom", handler.GetPalindrom)
+	router.GET("palindrome", handler.GetPalindrom)
 
 	router.POST("/language", handler.PostLanguage)
 	router.GET("/languages", handler.GetLanguages)

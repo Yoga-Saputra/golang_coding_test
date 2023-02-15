@@ -27,7 +27,7 @@ RESTful API of <b>Golang Coding Test</b>
 | NO | Use                           | Endpoint               | Example                     | Action
 |----|-------------------------------|------------------------|-----------------------------|------------
 | 1  | Hello                         | /              | http://localhost:3003/              | GET
-| 2  | Palindrom                     | /palindrom     | http://localhost:3003/palindrom     | GET
+| 2  | Palindrome                    | /palindrome    | http://localhost:3003/palindrom     | GET
 | 3  | Get language point 2          | /language      | http://localhost:3003/language      | GET
 | 4  | Get All language              | /languages     | http://localhost:3003/languages     | POST
 | 5  | Get language by id            | /language/:id  | http://localhost:3003/language/:id  | GET
